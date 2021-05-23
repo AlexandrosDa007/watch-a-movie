@@ -1,27 +1,32 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './shared/components';
-
-import { HomeRoutingModule } from './home/home-routing.module';
-import { DetailRoutingModule } from './detail/detail-routing.module';
+import { SettingsComponent } from './settings/settings.component';
+import { MoviesComponent } from './movies/movies.component';
+import { SeriesComponent } from './series/series.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    redirectTo: 'movies',
+    pathMatch: 'full',
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
+    path: 'settings',
+    component: SettingsComponent,
+  },
+  {
+    path: 'movies',
+    component: MoviesComponent,
+  },
+  {
+    path: 'series',
+    component: SeriesComponent,
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    HomeRoutingModule,
-    DetailRoutingModule
+    RouterModule.forRoot(routes),
   ],
   exports: [RouterModule]
 })

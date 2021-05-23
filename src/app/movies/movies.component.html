@@ -1,0 +1,6 @@
+<div *ngIf="movies" class="p-3 movies grid gap-2">
+    <div class="row">
+        <app-movie class="col-6 col-md-2" *ngFor="let movie of movies" [movie]="movie">
+        </app-movie>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ElectronService } from './core/services';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
@@ -9,10 +9,33 @@ import { AppConfig } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  movies = [
+    {
+      id: 'movie_1',
+      name: 'movieName',
+      description: 'mlsajfalsf',
+      airDate: '24/02/2016',
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      id: 'movie_2',
+      name: 'movieName2',
+      description: 'mlsajfalsf',
+      airDate: '24/02/2016',
+      image: 'https://via.placeholder.com/150',
+    }
+  ];
+
   constructor(
     private electronService: ElectronService,
-    private translate: TranslateService
+    private translate: TranslateService,
   ) {
+    this.movies.push(...this.movies);
+    this.movies.push(...this.movies);
+    this.movies.push(...this.movies);
+    this.movies.push(...this.movies);
+    this.movies.push(...this.movies);
     this.translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
 
@@ -25,4 +48,5 @@ export class AppComponent {
       console.log('Run in browser');
     }
   }
+
 }

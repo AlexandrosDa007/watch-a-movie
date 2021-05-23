@@ -1,0 +1,9 @@
+<div class="m-3 card">
+    <img [src]="movie.imageUrl" alt="image">
+    <span class="title">{{movie.title}}</span>
+    <div class="d-flex align-items-center justify-content-around">
+        <span class="air-date">{{movie.airDate}}</span>
+        <span class="duration">{{movie.duration}}'</span>
+    </div>
+    <button (click)="playMovie(movie)">Play</button>
+</div>
