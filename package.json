@@ -42,7 +42,8 @@
   },
   "dependencies": {
     "@electron/remote": "1.0.4",
-    "bootstrap": "5.0.1",
+    "@ng-bootstrap/ng-bootstrap": "9.1.1",
+    "bootstrap": "4.0.0-beta.2",
     "bootstrap-icons": "1.5.0",
     "jquery": "3.6.0",
     "popper.js": "1.16.1"

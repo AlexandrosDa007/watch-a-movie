@@ -5,5 +5,5 @@
         <span class="air-date">{{movie.airDate}}</span>
         <span class="duration">{{movie.duration}}'</span>
     </div>
-    <button (click)="playMovie(movie)">Play</button>
+    <button [routerLink]="'/player/'+movie.id">Play</button>
 </div>

@@ -1,0 +1,15 @@
+<div class="d-flex flex-column justify-content-between align-items-center h-50 p-5 m-3">
+  <div class="d-flex align-items-center justify-content-center">
+    <h2>Playing {{movie.title}} <button (click)="download()" class="btn-secondary">Download</button></h2>
+    
+  </div>
+
+  <video class="m-auto video"
+    [ngClass]="{'small': subtitleFontSize === 'small', 'medium': subtitleFontSize === 'medium', 'large': subtitleFontSize === 'large'}"
+    crossorigin *ngIf="movie" controls muted="true">
+    <source [src]="movie.path" type="video/mp4" />
+    <track label="English" kind="subtitles" srclang="en" [src]="movie.subs" default>
+    <track label="Greek" kind="subtitles" srclang="en" [src]="movie.subs">
+  </video>
+
+</div>

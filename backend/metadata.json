@@ -1,0 +1,18 @@
+{
+    "movies": {
+        "antMan2015": {
+            "id": "antMan2015",
+            "imagePath": "Ant-Man(2015)/kati.jpg",
+            "videoPath": "Ant-Man(2015)/Ant-Man.2015.720p.BluRay.x264.[YTS.AG].mp4",
+            "subsPath": "Ant-Man(2015)/Ant-Man.2015.720p.BluRay.x264.[YTS.AG].vtt",
+            "rootPath": "Ant-Man(2015)"
+        },
+        "something": {
+            "id": "something",
+            "imagePath": "Ant-Man(2015)/kati.jpg",
+            "videoPath": "Ant-Man(2015)/Ant-Man.2015.720p.BluRay.x264.[YTS.AG].mp4",
+            "subsPath": "Ant-Man(2015)/Ant-Man.2015.720p.BluRay.x264.[YTS.AG].vtt",
+            "rootPath": "Ant-Man(2015)"
+        }
+    }
+}

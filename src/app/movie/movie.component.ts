@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
 
@@ -8,10 +9,15 @@ import { Movie } from '../models/movie';
 })
 export class MovieComponent implements OnInit {
   @Input() movie: Movie;
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
-  ngOnInit(): void {
-    console.log(this.movie);
+  async ngOnInit(): Promise<void> {
+    // const base64 = await this.httpClient.get<string>(this.movie.imageUrl).toPromise();
+    // console.log(base64);
+    
+    // this.movie.base64 = base64;
     
   }
 

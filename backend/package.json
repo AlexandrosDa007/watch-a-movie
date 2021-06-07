@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jszip": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.1.0",
+    "@types/express": "^4.17.11"
+  }
+}

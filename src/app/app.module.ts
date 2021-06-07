@@ -16,6 +16,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
 import { HeaderComponent } from './header/header.component';
+import { PlayerComponent } from './player/player.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -30,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MoviesComponent,
     SeriesComponent,
     HeaderComponent,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient]
       }
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

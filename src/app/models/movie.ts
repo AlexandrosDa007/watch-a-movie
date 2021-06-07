@@ -4,5 +4,8 @@ export interface Movie {
     duration: number;
     airDate: string;
     imageUrl: string;
-    // TODO: do subtitles
+    image?: string;
+    base64?: string;
+    path: string;
+    subs: string;
 }

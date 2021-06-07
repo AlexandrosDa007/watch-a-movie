@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SettingsComponent } from './settings/settings.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
+import { PlayerComponent } from './player/player.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'series',
     component: SeriesComponent,
+  },
+  {
+    path: 'player/:id',
+    component: PlayerComponent,
   }
 ];
 
