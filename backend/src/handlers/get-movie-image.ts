@@ -8,8 +8,13 @@ export function getMovieImage(req: express.Request, res: express.Response) {
     const movie = METADATA.movies[id];
 
     if (!movie) {
-        return res.send('afgafa');
+        return res.status(400).send('Movie does not exists!');
     }
-    const image = readFileSync(`movies/${movie.imagePath}`, 'binary');
-    return res.send(image);
+    try {
+        const image = readFileSync(`movies/${movie.imagePath}`, 'binary');
+        return res.send(image);
+    } catch (error) {
+        console.error(error);
+        return res.status(501).send('Something went wrong!');
+    }
 }

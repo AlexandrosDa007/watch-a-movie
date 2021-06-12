@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { Movie } from '../models/movie';
 import { Metadata } from '../models/metadata';
 import { SettingsService } from './settings.service';
@@ -29,7 +29,12 @@ export class MoviesService {
                         });
                     })
                 );
-            })
+            }),
+            catchError(err => {
+                console.error(err.message);
+                alert(err.message);
+                return of([]);
+            }),
         );
         return movies$;
     }

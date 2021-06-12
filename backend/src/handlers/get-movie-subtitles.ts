@@ -1,6 +1,5 @@
 import express from 'express';
 import { readFileSync } from 'fs';
-import { send } from 'process';
 import { METADATA } from '../helpers/get-metadata';
 
 
@@ -16,6 +15,11 @@ export function getMovieSubtitles(req: express.Request, res: express.Response) {
     if (!subsPath) {
         return res.status(400).send('');
     }
-    const subs = readFileSync(`public/movies/${subsPath}`, 'utf-8');
-    return res.send(subs);
+    try {
+        const subs = readFileSync(`public/movies/${subsPath}`, 'utf-8');
+        return res.send(subs);
+    } catch (error) {
+        console.error(error);
+        return res.status(501).send('Something went wrong!');
+    }
 }
