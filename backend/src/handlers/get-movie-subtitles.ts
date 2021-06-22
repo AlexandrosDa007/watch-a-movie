@@ -1,12 +1,12 @@
 import express from 'express';
 import { readFileSync } from 'fs';
-import { METADATA } from '../helpers/get-metadata';
+import { getPrivateMetadata } from '../helpers/get-metadata';
 
 
 export function getMovieSubtitles(req: express.Request, res: express.Response) {
     const id = req.params.id;
-
-    const movie = METADATA.movies[id];
+    const metadata = getPrivateMetadata();
+    const movie = metadata.movies[id];
     if (!movie){
         return res.status(400).send('This movie does not exists!');
     }

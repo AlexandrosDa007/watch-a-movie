@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amplapa</title>
+    <script defer src="./add-new.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error {
+            color: rgb(190, 43, 43);
+        }
+
+        .file-input {
+            padding: 10px 10px;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        #create-movie {
+            background: #5ca8e8;
+            color: white;
+            outline: 0;
+            padding: 10px 30px;
+            margin: auto;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 200ms;
+        }
+
+        #create-movie:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="movieId">Movie ID</label>
+        <input id="movieId" type="text">
+        <label for="movieTitle">Title</label>
+        <input id="movieTitle" type="text">
+        <label for="movieDuration">Duration (min)</label>
+        <input id="movieDuration" type="number">
+
+        <label for="movieAirdate">Air date</label>
+        <input id="movieAirdate" type="date">
+
+
+        <div class="file-input">
+            <label for="movieImage">Image file</label>
+            <input id="movieImage" type="file" accept="image/*">
+        </div>
+
+        <div class="file-input">
+            <label for="movieVideo">Movie file</label>
+            <input id="movieVideo" type="file" accept="video/*">
+        </div>
+
+        <div class="file-input">
+            <label for="movieSubtitles">Movie Subtitles (.vtt)</label>
+            <input id="movieSubtitles" type="file" accept=".vtt">
+        </div>
+
+        <button id="create-movie">Create</button>
+
+    </div>
+    <hr style="width: 100%;">
+    <span id="error"></span>
+</body>
+
+</html>

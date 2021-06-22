@@ -1,6 +1,6 @@
 import express from 'express';
 import { createReadStream, readFileSync, statSync } from 'fs';
-import { METADATA } from '../helpers/get-metadata';
+import { getPrivateMetadata } from '../helpers/get-metadata';
 
 
 export function getMovieVideo(req: express.Request, res: express.Response) {
@@ -9,9 +9,9 @@ export function getMovieVideo(req: express.Request, res: express.Response) {
     if (!range) {
         return res.status(400).send('Requires Range header!');
     }
-
+    const metadata = getPrivateMetadata();
     const id = req.params.id;
-    const movie = METADATA.movies[id];
+    const movie = metadata.movies[id];
     if (!movie) {
         return res.status(404).send('No movie found!');
     }

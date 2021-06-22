@@ -1,4 +1,14 @@
 export interface Metadata {
-    movies: any;
-    series: any;
+    movies: Record<string, Movie>;
 }
+
+interface Movie {
+    id: string;
+    videoPath: string;
+    imagePath: string;
+    subsPath: string;
+}
+// TODO
+interface Series {
+}
+
