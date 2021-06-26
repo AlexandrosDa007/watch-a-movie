@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { Movie } from '../models/movie';
 import { Metadata } from '../models/metadata';
@@ -14,12 +14,19 @@ export class MoviesService {
         private settingsService: SettingsService,
     ) { }
 
+    /**
+     * Retrieves all movies
+     */
     getMovies(): Observable<Movie[]> {
         const serverConfig$ = this.settingsService.getServerConfig();
         const movies$ = serverConfig$.pipe(
             switchMap(serverConfig => {
-                return this.httpClient.get<Metadata>(`${serverConfig.host}:${serverConfig.port}/metadata.json`).pipe(
-                    map(metadata => Object.values(metadata.movies)),
+                return this.httpClient.get<Metadata>(`${serverConfig.host}:${serverConfig.port}/metadata`).pipe(
+                    map(metadata => {
+                        console.log('metadata', metadata);
+
+                        return Object.values(metadata.movies);
+                    }),
                     map(movies => {
                         return movies.map(movie => {
                             movie.path = `${serverConfig.host}:${serverConfig.port}/movies/video/${movie.id}`;
@@ -38,16 +45,15 @@ export class MoviesService {
         );
         return movies$;
     }
-
+    /**
+     * Retrieve a specific movie
+     * @param id The movie ID
+     */
     getMovie(id: string): Observable<Movie> {
         return this.getMovies().pipe(
             map(movies => {
                 return movies.find(movie => movie.id === id);
             }),
         );
-    }
-
-    getStuff() {
-        return this.httpClient.get(`http://localhost:3100/kati.srt`);
     }
 }

@@ -1,12 +1,12 @@
 {
   "name": "watch-a-movie",
   "version": "9.0.7",
-  "displayName": "testCordova",
-  "description": "Angular 11 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "displayName": "Watch a movie",
+  "description": "A client to watch movies from the 'watch-a-movie-server' from desktop/android",
+  "homepage": "https://github.com/AlexandrosDa007/watch-a-movie",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Alex Daltsis",
+    "email": "alexdaltsis@gmail.com"
   },
   "keywords": [
     "angular",
@@ -31,9 +31,9 @@
     "build": "npm run electron:serve-tsc && ng build --base-href ./",
     "build:dev": "npm run build -- -c dev",
     "build:prod": "npm run build -- -c production",
-    "ng:serve": "ng serve -c web -o",
+    "ng:serve": "ng serve -c web -o --port 4100",
     "electron:serve-tsc": "tsc -p tsconfig.serve.json",
-    "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron . --serve",
+    "electron:serve": "wait-on tcp:4100 && npm run electron:serve-tsc && npx electron . --serve",
     "electron:local": "npm run build:prod && npx electron .",
     "electron:build": "npm run build:prod && electron-builder build --win --publish=never",
     "test": "ng test --watch=false",

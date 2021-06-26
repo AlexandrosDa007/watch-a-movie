@@ -32,27 +32,38 @@ export class SettingsService {
             this.serverConfig$.next(serverConfig);
         }
     }
-
-
+    /**
+     * Retrieves the server config once
+     */
     getServerConfigOnce(): ServerConfig {
         return this.serverConfig$.value;
     }
-
+    /**
+     * Retrieves the server config
+     */
     getServerConfig(): Observable<ServerConfig> {
         return this.serverConfig$;
     }
-
+    /**
+     * Update the server config
+     * @param serverConfig The new server config
+     */
     setServerConfig(serverConfig: ServerConfig): void {
         localStorage.setItem('host', serverConfig.host);
         localStorage.setItem('port', serverConfig.port+'');
         this.serverConfig$.next(serverConfig);
     }
-
+    /**
+     * Updates the subtitle font size
+     * @param size The new subtitle font size
+     */
     setSubtitleSize(size: SubtitleFontSize): void {
         localStorage.setItem('subtitleSize', size);
         this.subtitleSize$.next(size);
     }
-
+    /**
+     * Retrieves the subtitle font size
+     */
     getSubtitleSize(): Observable<SubtitleFontSize> {
         return this.subtitleSize$;
     }
