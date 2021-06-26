@@ -1,5 +1,5 @@
 {
-  "name": "com.alexdaltsis.watch-a-movie",
+  "name": "com.alexdaltsis.watchamovie",
   "displayName": "Watch a movie",
   "version": "1.0.0",
   "description": "A client for watching movie from 'watch-a-movie-server'",
