@@ -1,6 +1,6 @@
 {
   "name": "watch-a-movie",
-  "version": "9.0.7",
+  "version": "1.0.0",
   "displayName": "Watch a movie",
   "description": "A client to watch movies from the 'watch-a-movie-server' from desktop/android",
   "homepage": "https://github.com/AlexandrosDa007/watch-a-movie",
