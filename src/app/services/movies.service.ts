@@ -25,7 +25,7 @@ export class MoviesService {
                     map(metadata => {
                         console.log('metadata', metadata);
 
-                        return Object.values(metadata.movies);
+                        return Object.keys(metadata.movies || {}).map(key => metadata.movies[key]);
                     }),
                     map(movies => {
                         return movies.map(movie => {
